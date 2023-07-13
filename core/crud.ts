@@ -2,7 +2,7 @@ import fs from 'fs' //ES6
 // const fs = require('fs') => Common JS
 import { v4 as uuid } from 'uuid'
 
-const DB_FILE_PATH = './aula02/core/db'
+const DB_FILE_PATH = './core/db'
 
 console.log('[CRUD]')
 

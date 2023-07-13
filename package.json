@@ -4,9 +4,8 @@
   "description": "Repositório criado para reunir exercícios e projetos desenvolvidos durante o curso CRUD com Qualidade",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node ./aula02/core/crud.ts",
-    "dev": "nodemon --ext ts,tsx --exec 'npm run start'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:crud": "npx ts-node ./core/crud.ts",
+    "dev:crud": "nodemon --ext ts,tsx --exec 'npm run start'"
   },
   "keywords": [],
   "author": "Mazzi Nogueira",
