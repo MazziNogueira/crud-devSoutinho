@@ -1,0 +1,18 @@
+{
+  "name": "crud-devsoutinho",
+  "version": "1.0.0",
+  "description": "Repositório criado para reunir exercícios e projetos desenvolvidos durante o curso CRUD com Qualidade",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./aula02/core/crud.js",
+    "dev": "nodemon ./aula02/core/crud.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "keywords": [],
+  "author": "Mazzi Nogueira",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
