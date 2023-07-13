@@ -6,8 +6,10 @@ const DB_FILE_PATH = './aula02/core/db'
 
 console.log('[CRUD]')
 
+type UUID = string
+
 interface Todo {
-    id: string,
+    id: UUID,
     date: string;
     content: string;
     done: boolean
@@ -52,7 +54,7 @@ function read(): Array<Todo> {
 
 
 // UPDATE
-function update(id: string, partialTodo: Partial<Todo>): Todo {
+function update(id: UUID, partialTodo: Partial<Todo>): Todo {
     // declara variável para guardar possível tarefa atualizada
     let updatedTodo
 
@@ -84,11 +86,31 @@ function update(id: string, partialTodo: Partial<Todo>): Todo {
 }
 
 
+// UPDATE content by id
 // na vida real, é mais comum usar uma função para cada propriedade a ser atualizada. dessa forma, cria-se a updateContentById, updateStatusById, updateDateById, etc, todas elas chamando a função update principal
-function updateContentById(id: string, content: string): Todo {
+function updateContentById(id: UUID, content: string): Todo {
     return update(id, {
         content: content
     })
+}
+
+
+// DELETE
+function deleteById(id: UUID){
+    const todos = read()
+
+    const todosWithoutDeleted = todos.filter((todo) => {
+        if(todo.id === id) {
+            return false
+        }
+
+        return true
+    })
+
+    // escreve no DB a lista de TODOs atualizada, sem a tarefa deletada
+    fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
+        todos: todosWithoutDeleted,
+    }, null, 2))
 }
 
 // limpeza do banco de dados
@@ -104,14 +126,18 @@ CLEAR_DB()
 
 // cria duas tarefas
 create('Primeira TODO')
-create('Segunda TODOoo')
+
+const secondTodo = create('Segunda TODO')
+deleteById(secondTodo.id)
 
 // cria terceira tarefa e imediatamente a atualiza
-const terceiraTodo = create('Terceira Todo')
-// update(terceiraTodo.id, {
+const thirdTodo = create('Terceira TODO')
+// update(thirdTodo.id, {
 //     content: 'terceira todo atualizadaaa',
 //     done: true
 // })
-updateContentById(terceiraTodo.id, 'Atualizada!')
+updateContentById(thirdTodo.id, 'Atualizada!')
+
+create('Quarta TODO')
 
 console.log(read()) 
