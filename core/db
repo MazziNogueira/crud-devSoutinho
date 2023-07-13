@@ -1,0 +1,23 @@
+{
+  "todos": [
+    {
+      "id": "05153d44-5e50-415b-a10a-6bcf9146a52c",
+      "date": "2023-07-13T15:55:03.245Z",
+      "content": "Primeira TODO",
+      "done": false
+    },
+    {
+      "id": "f1b47b50-fe5f-4e86-b05e-af4bb9b132e9",
+      "date": "2023-07-13T15:55:03.249Z",
+      "content": "Atualizada!",
+      "done": false
+    },
+    {
+      "id": "996e9ad9-2833-425c-ab50-80a12ab08a38",
+      "date": "2023-07-13T15:55:03.251Z",
+      "content": "Quarta TODO",
+      "done": false
+    }
+  ],
+  "dogs": []
+}
