@@ -1,12 +1,13 @@
-import { GlobalStyles } from "../src/theme/GlobalStyles"
+import { GlobalStyles } from "@ui/theme/GlobalStyles"
 
-const bg = "https://mariosouto.com/cursos/crudcomqualidade/bg";
+// const bg = "https://mariosouto.com/cursos/crudcomqualidade/bg"
+const bg = "/bg.jpeg" // imagem está dentro da pasta public
 
 function HomePage() {
     return (
         (
             <main>
-                <GlobalStyles themeName="indigo" />
+                <GlobalStyles themeName="devsoutinho" />
                <header
                  style={{
                     backgroundImage: `url('${bg}')`,
