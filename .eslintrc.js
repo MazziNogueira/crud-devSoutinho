@@ -1,31 +1,31 @@
 module.exports = {
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     env: {
         browser: true,
         es2021: true,
         node: true,
     },
-    plugins: ["react", "prettier", "@typescript-eslint"],
+    plugins: ['react', 'prettier', '@typescript-eslint'],
     extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "plugin:prettier/recommended",
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:prettier/recommended',
     ],
     overrides: [],
     parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     settings: {
         react: {
-            version: "detect",
+            version: 'detect',
         },
     },
-    ignorePatterns: ["node_modules/", "_explanations/"],
+    ignorePatterns: ['node_modules/', '_explanations/'],
     rules: {
-        "no-console": "error", // também é possível dar o valor 2
-        "react/no-unknown-property": ["error", { ignore: ["jsx", "global"] }],
+        'no-console': 'error', // também é possível dar o valor 2
+        'react/no-unknown-property': ['error', { ignore: ['jsx', 'global'] }],
         // quotes: ['error', 'single'],
     },
-};
+}
