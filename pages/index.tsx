@@ -1,25 +1,25 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from "react";
-import { GlobalStyles } from "@ui/theme/GlobalStyles";
-import { todoController } from "@ui/controller/todo";
+import React, { useEffect, useState } from 'react'
+import { GlobalStyles } from '@ui/theme/GlobalStyles'
+import { todoController } from '@ui/controller/todo'
 
 // const bg = "https://mariosouto.com/cursos/crudcomqualidade/bg"
-const bg = "/bg.jpeg"; // imagem está dentro da pasta public
+const bg = '/bg.jpeg' // imagem está dentro da pasta public
 
 interface HomeTodo {
-    id: string;
-    content: string;
+    id: string
+    content: string
 }
 
 function HomePage() {
-    const [todos, setTodos] = useState<HomeTodo[]>([]);
+    const [todos, setTodos] = useState<HomeTodo[]>([])
 
     // load infos onload
     useEffect(() => {
         todoController.get().then((todos) => {
-            setTodos(todos);
-        });
-    }, []);
+            setTodos(todos)
+        })
+    }, [])
 
     return (
         <main>
@@ -75,7 +75,7 @@ function HomePage() {
                                         </button>
                                     </td>
                                 </tr>
-                            );
+                            )
                         })}
 
                         {/* <tr>
@@ -118,7 +118,7 @@ function HomePage() {
                 </table>
             </section>
         </main>
-    );
+    )
 }
 
-export default HomePage;
+export default HomePage
