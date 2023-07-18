@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 const DB_FILE_PATH = "./core/db";
 
-console.log("[CRUD]");
+// console.log("[CRUD]");
 
 type UUID = string;
 
@@ -44,7 +44,7 @@ function create(content: string): Todo {
 }
 
 // READ
-function read(): Array<Todo> {
+export function read(): Array<Todo> {
     const dbString = fs.readFileSync(DB_FILE_PATH, "utf-8");
     const db = JSON.parse(dbString || "{}");
 
@@ -134,22 +134,22 @@ function CLEAR_DB() {
 }
 
 // [SIMULATION]
-CLEAR_DB();
+// CLEAR_DB();
 
-// cria duas tarefas
-create("Primeira TODO");
+// // cria duas tarefas
+// create("Primeira TODO");
 
-const secondTodo = create("Segunda TODO");
-deleteById(secondTodo.id);
+// const secondTodo = create("Segunda TODO");
+// deleteById(secondTodo.id);
 
-// cria terceira tarefa e imediatamente a atualiza
-const thirdTodo = create("Terceira TODO");
-// update(thirdTodo.id, {
-//     content: 'terceira todo atualizadaaa',
-//     done: true
-// })
-updateContentById(thirdTodo.id, "Atualizada!");
+// // cria terceira tarefa e imediatamente a atualiza
+// const thirdTodo = create("Terceira TODO");
+// // update(thirdTodo.id, {
+// //     content: 'terceira todo atualizadaaa',
+// //     done: true
+// // })
+// updateContentById(thirdTodo.id, "Atualizada!");
 
-create("Quarta TODO");
+// create("Quarta TODO");
 
-console.log(read());
+// console.log(read());
